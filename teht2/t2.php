@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="username">Username</label>
     <input type="text" name="username" id="username">
 
-    <label for="remember-me">Username</label>
+    <label for="remember-me">Remember me</label>
     <input type="checkbox" name="remember-me" id="remember-me">
 
     <button type="submit">Submit</button>
