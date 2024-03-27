@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div>
-        <!-- Color (radio buttons), options: red, green, blue -->
         <label for="red">Red</label>
         <input type="radio" id="red" name="color" value="red">
         <label for="green">Green</label>
@@ -16,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="radio" id="blue" name="color" value="blue">
     </div>
     <div>
-        <!-- Size (select), options: small, medium, large -->
         <label for="size">Size:</label>
         <select id="size" name="size">
             <option value="small">Small</option>
@@ -25,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </select>
     </div>
     <div>
-        <!-- Font style (checkboxes), options: bold, italic -->
         <label for="bold">Bold</label>
         <input type="checkbox" id="bold" name="style" value="bold">
         <label for="italic">Italic</label>
