@@ -47,7 +47,7 @@ endif;
             </tr>
         </thead>
         <tbody>
-
+            <?php require_once 'selectData.php'; ?>
         </tbody>
     </table>
 </section>
