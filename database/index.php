@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="" method="post">
+<form action="insertData.php" method="post">
     <div>
         <label for="title">Title</label>
         <input type="text" name="title" id="title">
