@@ -8,6 +8,15 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+if (isset($_GET['success'])):
+    ?>
+    <aside>
+        <p><?php echo $_GET['success']; ?></p>
+    </aside>
+<?php
+endif;
+?>
 <form action="insertData.php" method="post">
     <div>
         <label for="title">Title</label>
