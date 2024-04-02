@@ -19,7 +19,7 @@ try {
         echo '<td>' . $row['created_at'] . '</td>';
         echo '<td>
                 <a href="deleteData.php?id=' . $row['media_id'] . '">Delete</a>
-                <a href="#" data-id="' . $row['media_id'] . '">Modify</a>   
+                <a href="#" class="modify-link" data-id="' . $row['media_id'] . '">Modify</a>   
               </td>';
         echo '</tr>';
     }
