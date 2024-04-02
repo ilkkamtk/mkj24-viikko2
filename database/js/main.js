@@ -1,6 +1,7 @@
 'use strict';
 const modifyLinks = document.querySelectorAll('.modify-link');
 const modifyModal = document.querySelector('#modify-modal');
+const modifyContent = document.querySelector('#modify-content');
 
 modifyLinks.forEach((link) => {
     link.addEventListener('click', async (evt) => {
@@ -8,7 +9,8 @@ modifyLinks.forEach((link) => {
         const id = link.dataset.id;
         const response = await fetch('modifyForm.php?id=' + id);
         const html = await response.text();
-        modifyModal.insertAdjacentHTML('beforeend', html);
+        modifyContent.innerHTML = '';
+        modifyContent.insertAdjacentHTML('afterbegin', html);
         modifyModal.showModal();
     })
 })
