@@ -18,7 +18,6 @@ if(isset($_GET['id'])) {
         echo "Could not delete likes from the database.";
         file_put_contents('PDOErrors.txt', 'deleteData.php - ' . $e->getMessage(), FILE_APPEND);
         $DBH->rollBack();
-        exit;
     }
 
     // delete comments
@@ -74,4 +73,6 @@ if(isset($_GET['id'])) {
         $DBH->rollBack();
         exit;
     }
+} else {
+    header('Location: index.php?success=No hacking allowed.');
 }
