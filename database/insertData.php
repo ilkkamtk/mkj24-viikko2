@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 global $DBH;
 require 'dbConnect.php';
 
@@ -10,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $temp_file = $_FILES['file']['tmp_name'];
         $destination = __DIR__ . '/uploads/' . $filename;
         if (!move_uploaded_file($temp_file, $destination)) {
-            header('Location: index.php?success=File upload failed');
+            // header('Location: index.php?success=File upload failed');
             exit;
         }
 
