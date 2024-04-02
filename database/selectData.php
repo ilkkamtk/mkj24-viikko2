@@ -1,6 +1,6 @@
 <?php
 global $DBH;
-require 'dbConnect.php';
+require_once 'dbConnect.php';
 
 $sql = 'SELECT * FROM MediaItems;';
 
