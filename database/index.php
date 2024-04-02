@@ -44,6 +44,7 @@ endif;
                 <th>title</th>
                 <th>description</th>
                 <th>created_at</th>
+                <th>Options</th>
             </tr>
         </thead>
         <tbody>

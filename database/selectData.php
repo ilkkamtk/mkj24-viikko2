@@ -17,6 +17,10 @@ try {
         echo '<td>' . $row['title'] . '</td>';
         echo '<td>' . $row['description'] . '</td>';
         echo '<td>' . $row['created_at'] . '</td>';
+        echo '<td>
+                <a href="deleteData.php?id=' . $row['media_id'] . '">Delete</a>
+                <a href="">Modify</a>   
+              </td>';
         echo '</tr>';
     }
 } catch (PDOException $e) {
