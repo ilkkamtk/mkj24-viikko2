@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <?php
