@@ -92,7 +92,11 @@ if(isset($_GET['id'])) {
         $STH = $DBH->prepare($sql);
         $STH->execute($data);
         $DBH->commit();
-        header('Location: home.php?success=Item deleted');
+        if($STH->rowCount() > 0) {
+            header('Location: home.php?success=Item deleted');
+        } else {
+            header('Location: home.php?success=Not your item.');
+        }
     } catch (PDOException $e) {
         echo "Could not delete data from the database.";
         file_put_contents('PDOErrors.txt', 'deleteData.php - ' . $e->getMessage(), FILE_APPEND);
