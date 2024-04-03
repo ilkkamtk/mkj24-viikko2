@@ -76,8 +76,8 @@ if(isset($_GET['id'])) {
         $filename = $row['filename'];
         $destination = __DIR__ . '/uploads/' . $filename;
         if (!unlink($destination)) {
-            echo "Could not delete file from the server.";
             $DBH->rollBack();
+            header('Location: home.php?success=File delete failed');
             exit;
         }
     } catch (PDOException $e) {
