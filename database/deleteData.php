@@ -1,11 +1,17 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header('Location: index.php');
+    exit;
+}
+
 global $DBH;
 require_once 'dbConnect.php';
 
 if(isset($_GET['id'])) {
     $DBH->beginTransaction();
     $data = [
-        'media_id' => $_GET['id']
+        'media_id' => $_GET['id'],
     ];
     // delete file from server
     $sql = 'SELECT filename FROM MediaItems WHERE media_id = :media_id';
@@ -78,8 +84,9 @@ if(isset($_GET['id'])) {
         exit;
     }
 
+    $data['user_id'] = $_SESSION['user']['user_id'];
     // delete MediaItems
-    $sql = 'DELETE FROM MediaItems WHERE media_id = :media_id';
+    $sql = 'DELETE FROM MediaItems WHERE media_id = :media_id AND user_id = :user_id';
 
     try {
         $STH = $DBH->prepare($sql);
