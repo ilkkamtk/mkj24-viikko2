@@ -29,7 +29,7 @@ try {
                 <a href="#" class="modify-link" data-id="' . $row['media_id'] . '">Modify</a>   
               </td>';
         } else {
-            echo '<td></td>';
+            echo '<td>Ei kuulu sulle</td>';
         }
         echo '</tr>';
     }
