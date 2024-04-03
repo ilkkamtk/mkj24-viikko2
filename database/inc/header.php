@@ -12,11 +12,11 @@
 <body>
 <?php
 if (isset($_GET['success'])):
-?>
-<dialog id="success-modal">
-    <p><a href="#" class="close-modal">Close</a></p>
-    <p><?php echo $_GET['success']; ?></p>
-</dialog>
+    ?>
+    <dialog id="success-modal">
+        <p><a href="#" class="close-modal">Close</a></p>
+        <p><?php echo $_GET['success']; ?></p>
+    </dialog>
 <?php
 endif;
 ?>
@@ -25,7 +25,17 @@ endif;
         <h1>Media Library</h1>
         <nav>
             <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="index.php">Login</a></li>
+                <?php
+                if (isset($_SESSION['user'])):
+                    ?>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php
+                else:
+                    ?>
+                    <li><a href="index.php">Login</a></li>
+                <?php
+                endif;
+                ?>
             </ul>
     </header>
